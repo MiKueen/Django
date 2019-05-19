@@ -35,7 +35,7 @@ def add_to_cart(request, **kwargs):
     # check if the user already owns this product
     if item in request.user.profile.ebooks.all():
         messages.info(request, 'You already own this ebook')
-        return redirect(reverse('items:item-list')) 
+        return redirect(reverse('items:item_list')) 
     # create orderItem of the selected product
     order_item, status = OrderItem.objects.get_or_create(item=item)
     # create order associated with the user
@@ -48,7 +48,7 @@ def add_to_cart(request, **kwargs):
 
     # show confirmation message and redirect back to the same page
     messages.info(request, "item added to cart")
-    return redirect(reverse('items:item-list'))
+    return redirect(reverse('items:item_list'))
 
 
 @login_required()
