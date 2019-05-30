@@ -1,1 +1,1 @@
-web: gunicorn e_commerce.wsgi --log-file 
+web: gunicorn e_commerce.wsgi
