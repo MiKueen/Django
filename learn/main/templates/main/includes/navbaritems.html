@@ -1,0 +1,12 @@
+<li><a href="/">Home</a></li>
+<li><a href="/">Study Material</a></li>
+<li><a href="/">Classes</a></li>
+<li><a href="/">Buy a Course</a></li>
+{% if user.is_authenticated %}
+  <li><a href="/">My Courses</a></li>
+  <li><a href="/">{{ user.username }}</a></li>
+  <li><a href="/logout">Logout</a></li>
+{% else %}
+  <li><a href="/login">Login</a></li>
+  <li><a href="/register">Register</a></li>
+{% endif %}
