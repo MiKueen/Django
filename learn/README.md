@@ -7,3 +7,5 @@
 - To run server, type `python manage.py runserver`
 
 ### The application is up and running now you can register, login and see the different categories, series and tutorials.
+
+If you don't want to download the repo, here is the (link)[https://kueen-pro-learn.herokuapp.com/) to access the app(open it on desktop c: )
