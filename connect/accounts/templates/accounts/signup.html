@@ -2,13 +2,10 @@
 
 {% block body %}
 	<div class="container">
-		<h1>Welcome to  Connect!!</h1>
-		<p>Start building your network</p>
-		<h2>Login</h2>
 		<form method="post">
 			{% csrf_token %}
 			{{ form.as_p }}
-			<button type="submit">Login</button>
+			<button type="submit">SignUp</button>
 		</form>
 	</div>
 {% endblock %}
