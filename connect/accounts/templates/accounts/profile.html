@@ -8,9 +8,14 @@
 	<div class="container">
 		<h1>Your Profile</h1>
 		<br>
+		<img src="{{ user.userprofile.image.url }}" width="240">
+		<br>
 		<p>Username: {{ user }}</p>
 		<p>First Name: {{ user.first_name }}</p>
 		<p>Last Name: {{ user.last_name }}</p>
 		<p>Email: {{ user.email }}</p>
+		<p>Description: {{ user.userprofile.description }}</p>
+		<p>City: {{ user.userprofile.city }}</p>
+		<p>Contact Info: {{ user.userprofile.phone }}</p>
 	</div>
 {% endblock %}
