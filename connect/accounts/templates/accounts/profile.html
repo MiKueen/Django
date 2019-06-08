@@ -8,7 +8,9 @@
 	<div class="container">
 		<h1>Your Profile</h1>
 		<br>
-		<img src="{{ user.userprofile.image.url }}" width="240">
+		{% if user.userprofile.image %}
+			<img src="{{ user.userprofile.image.url }}" width="240">
+		{% endif %}
 		<br>
 		<p>Username: {{ user }}</p>
 		<p>First Name: {{ user.first_name }}</p>

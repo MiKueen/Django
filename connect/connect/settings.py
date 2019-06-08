@@ -32,7 +32,9 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'accounts',
+    'home',
     'bootstrap4',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -49,7 +51,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'login_required.middleware.LoginRequiredMiddleware'
 ]
 
 ROOT_URLCONF = 'connect.urls'
@@ -133,18 +134,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'accounts/media')
 LOGIN_REDIRECT_URL = '/accounts/'
 
 LOGIN_URL = "/accounts/login/"
-LOGIN_EXEMPT_URLS = [
-    # LOGIN_URL is always exempt, no need to repeat it here
-    "/accounts/logout/",
-    "/accounts/signup/",
-    "/accounts/reset-password/",
-    "/accounts/reset-password/done/",
-    "/accounts/reset-password/confirm/<uidb64>/<token>/",
-    "/accounts/reset-password/complete/",
-]
 
-EMAIL_HOST = 'localhost'
-EMAIL_PORT = 1025
-
-EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
-EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
