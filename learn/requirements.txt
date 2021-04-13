@@ -4,7 +4,7 @@ django-allauth==0.36.0
 django-cors-headers==2.5.2
 django-heroku==0.3.1
 django-tinymce4-lite==1.7.5
-djangorestframework==3.9.2
+djangorestframework==3.11.2
 gunicorn==19.9.0
 Markdown==3.1
 MarkupSafe==1.0
